@@ -19,6 +19,7 @@ string* reverseArray(string* arr, int size) {
     }
     return arr;
 }
+// main function
 int main(){
     int size = 5;
     
@@ -26,10 +27,24 @@ int main(){
     string* names = new string[size];
 
     // feed the array with names 
-    
+    *(names + 0) = "janet";
+    *(names + 1) = "Jeffe";
+    *(names + 2) = "jin";
+    *(names + 3) = "joe";
+    *(names + 4) = "junio";
+
+    cout << "Original Array: ";
+    displayArray(names, size);
+
+    reverseArray(names, size);
+
+    cout << "Reverse Array: ";
+    displayArray(names, size);
 
 
-    cout << "hello" << endl;
+    // free dynamically allocated memory 
+    delete [] names;
+
 
     return 0;
     
